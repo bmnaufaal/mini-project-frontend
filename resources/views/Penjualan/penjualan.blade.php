@@ -121,7 +121,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-primary" id="submitCreate">Submit</button>
+              <button type="submit" class="btn btn-primary" id="submitCreate">Submit</button>
             </form>
             </div>
           </div>
@@ -233,7 +233,7 @@
         } );
 
         var formCreate = $("#create_penjualan")[0];
-        $('#submitCreate').on( 'click', function () {
+        $('#create_penjualan').on( 'submit', function () {
             var urlCreate = "http://mini-project-api.test/api/createDataPenjualan"
             $.ajax({
                 url: urlCreate,
@@ -257,6 +257,7 @@
                     console.log(xhr.responseText);
                 }
             });
+            return false;
         });
 
         $('#createModal').on('hidden.bs.modal', function(e) {
