@@ -195,7 +195,6 @@
         var id_nota;
         var id_pelanggan;
         var tgl;
-        var tglFull;
         var kode_pelanggan;
         var subtotal;
         $('#dataTable tbody').on( 'click', 'button', function () {
@@ -203,11 +202,11 @@
             id_pelanggan = data['id_pelanggan'];
             id_nota = data['id_nota'];
             tgl = data['tgl'];
-            tglFull = tgl.split("/").reverse().join("-");
+            tgl = tgl.split("/").reverse().join("-");
             kode_pelanggan = data['kode_pelanggan'];
             subtotal = data['subtotal'];
             $('.modal-body #edit_nota').val(id_nota);
-            $('.modal-body #edit_tgl').val(tglFull);
+            $('.modal-body #edit_tgl').val(tgl);
             $('.modal-body #edit_kode_pelanggan').val(kode_pelanggan);
         } );
         $('#confirmDelete').on( 'click', function () {
